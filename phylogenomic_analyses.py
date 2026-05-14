@@ -1,4 +1,3 @@
-
 ## Import needed modules
 import os
 import sys
@@ -27,7 +26,7 @@ imput_folder_path = "/shared/forsythe/BB485/Week06/Brass_CDS_seqs/"
 
 imput_file_path_list = glob.glob(imput_folder_path+"*.fasta")
 
-for temp_file in imput_file_path_list [0:10]:  ###remove [0:10] for full file run
+for temp_file in imput_file_path_list:  ###remove [0:10] for full file run
     print(temp_file)
     full_path_to_file = temp_file
     print(full_path_to_file)
@@ -55,7 +54,7 @@ for temp_file in imput_file_path_list [0:10]:  ###remove [0:10] for full file ru
     ##preform phylogenetic tree construction using IQtree
 
     #Create the command. -nt 2 means two threads. If running this from within a job submission, you could use more threads to make it go faster.
-    tree_command = f"iqtree -s {new_file_path} -m TEST -nt 2"
+    tree_command = f"iqtree -s {new_file_path} -m TEST -nt 24"
 
     #Check the command 
     print(tree_command)
